@@ -27,7 +27,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: #0c1220;
     --surface: #131b2e;
     --tint: #0f1727;
@@ -48,6 +48,28 @@
     --blue: #9dc0f2;  --blue-soft: #1a2940;
     --green: #a9d48f; --green-soft: #1f2e18;
   }
+}
+/* The same dark colours when the visitor picks dark with the sun/moon button. Keep the two lists identical. */
+:root[data-theme="dark"] {
+  --bg: #0c1220;
+  --surface: #131b2e;
+  --tint: #0f1727;
+  --text: #e9edf5;
+  --muted: #a3aec4;
+  --line: #253049;
+  --accent: #d6ad55;      /* gold carries the accent on dark */
+  --accent-strong: #e4c176;
+  --accent-ink: #151004;
+  --accent-soft: #2a2412;
+  --gold: #d6ad55;
+  --motif: #8fa3cf;
+  --shadow: none;
+
+  --rose: #f0a3be;  --rose-soft: #3a1f2a;
+  --amber: #e8bd6a; --amber-soft: #352914;
+  --teal: #6fd6ca;  --teal-soft: #15302c;
+  --blue: #9dc0f2;  --blue-soft: #1a2940;
+  --green: #a9d48f; --green-soft: #1f2e18;
 }
 
 * { box-sizing: border-box; }
@@ -89,6 +111,21 @@ h1, h2, h3 { font-family: var(--display); font-weight: 700; text-wrap: balance; 
 .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 700; letter-spacing: -0.01em; margin-right: auto; }
 .brand-name { display: block; height: 44px; width: auto; aspect-ratio: 172.83 / 77.3; }
 
+/* Sun/moon button */
+.theme-toggle {
+  display: inline-grid; place-items: center; width: 44px; height: 44px; flex: none; padding: 0; cursor: pointer;
+  border: 1px solid var(--line); border-radius: 50%; background: var(--surface); color: var(--text);
+}
+.theme-toggle:hover { border-color: var(--accent); }
+.theme-toggle:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.theme-toggle .icon-sun { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .icon-sun { display: block; }
+  :root:not([data-theme="light"]) .theme-toggle .icon-moon { display: none; }
+}
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
 /* Menu button and its panel (all screen sizes) */
 .menu { position: relative; }
 .menu summary {
@@ -110,6 +147,8 @@ h1, h2, h3 { font-family: var(--display); font-weight: 700; text-wrap: balance; 
 }
 .menu nav a:hover, .menu nav a:focus-visible { background: var(--tint); }
 .menu nav .menu-github { margin-top: 6px; border-top: 1px solid var(--line); border-radius: 0 0 12px 12px; padding-top: 6px; min-height: 54px; font-weight: 600; }
+.menu nav .menu-github:hover { border-radius: 12px; }
+.menu nav .menu-social { font-weight: 600; }
 
 /* ---------- Hero ---------- */
 .hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
@@ -130,7 +169,7 @@ h1 { margin: 0 0 22px; font-size: clamp(34px, 6.2vw, 60px); line-height: 1.08; l
 
 .actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .btn {
-  display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px;
+  display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 22px;
   border: 1px solid var(--line); border-radius: 999px;
   color: var(--text); background: var(--surface); text-decoration: none; font-weight: 600; font-size: 16px;
   transition: border-color .15s, background-color .15s;
@@ -202,7 +241,7 @@ h2::after { content: ""; display: block; width: 44px; height: 3px; margin-top: 1
 .rules p { margin: 0; color: var(--muted); }
 
 /* Contact */
-#contact { padding-top: 0; }
+#hello { padding-top: 0; }
 .contact { background: var(--accent); color: var(--accent-ink); border-radius: 24px; padding: 48px; }
 .contact h2::after { background: currentColor; opacity: .45; }
 .contact p { margin: 18px 0 26px; max-width: 56ch; opacity: .92; }
@@ -235,7 +274,7 @@ h2::after { content: ""; display: block; width: 44px; height: 3px; margin-top: 1
   .card.feature h3 { font-size: 25px; }
   .card.feature .tile { width: 52px; height: 52px; font-size: 19px; border-radius: 14px; }
   .card.feature .card-head { align-items: center; }
-  #contact { padding-top: 0; }
+  #hello { padding-top: 0; }
   .contact { padding: 32px 22px; border-radius: 20px; }
   .contact .btn { font-size: 15px; padding: 0 18px; }
 }
