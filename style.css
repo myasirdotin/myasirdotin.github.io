@@ -1,19 +1,19 @@
 /* Yasir Rasool — personal site. Plain CSS, no build step. Light and dark follow the device setting. */
 
 :root {
-  --bg: #fbf9f4;          /* paper */
+  --bg: #fbfaf6;          /* paper */
   --surface: #ffffff;     /* cards */
-  --tint: #f3efe6;        /* tinted band */
-  --text: #17211f;
-  --muted: #58635f;
-  --line: #e3ddd0;
-  --accent: #0f5f58;      /* deep teal */
-  --accent-strong: #0a4a44;
+  --tint: #f2f1ea;        /* tinted band */
+  --text: #141b2d;
+  --muted: #566076;
+  --line: #e2dfd4;
+  --accent: #16264a;      /* navy, from the logo */
+  --accent-strong: #0d1934;
   --accent-ink: #ffffff;
-  --accent-soft: #e2f0ed;
-  --gold: #b07a1e;
-  --motif: #0f5f58;
-  --shadow: 0 1px 2px rgb(23 33 31 / 5%), 0 8px 24px rgb(23 33 31 / 6%);
+  --accent-soft: #e6eaf3;
+  --gold: #b08528;
+  --motif: #16264a;
+  --shadow: 0 1px 2px rgb(20 27 45 / 5%), 0 8px 24px rgb(20 27 45 / 6%);
   --radius: 16px;
   --display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
   --body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -28,18 +28,18 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0e1413;
-    --surface: #151d1b;
-    --tint: #111917;
-    --text: #e9efed;
-    --muted: #a0afab;
-    --line: #27322f;
-    --accent: #3cbfb1;
-    --accent-strong: #62d3c6;
-    --accent-ink: #052320;
-    --accent-soft: #15302c;
-    --gold: #e0b25a;
-    --motif: #3cbfb1;
+    --bg: #0c1220;
+    --surface: #131b2e;
+    --tint: #0f1727;
+    --text: #e9edf5;
+    --muted: #a3aec4;
+    --line: #253049;
+    --accent: #d6ad55;      /* gold carries the accent on dark */
+    --accent-strong: #e4c176;
+    --accent-ink: #151004;
+    --accent-soft: #2a2412;
+    --gold: #d6ad55;
+    --motif: #8fa3cf;
     --shadow: none;
 
     --rose: #f0a3be;  --rose-soft: #3a1f2a;
@@ -78,7 +78,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 700; text-wrap: balance; 
   background: var(--bg); color: var(--text); pointer-events: none;
   animation: intro-out .45s ease 1.2s forwards;
 }
-.intro svg { width: min(70vw, 300px); height: auto; animation: intro-in .7s cubic-bezier(.2, .7, .2, 1) both; }
+.intro svg { width: min(72vw, 340px); height: auto; animation: intro-in .7s cubic-bezier(.2, .7, .2, 1) both; }
 @keyframes intro-in { from { opacity: 0; transform: translateY(12px) scale(.96); } }
 @keyframes intro-out { to { opacity: 0; visibility: hidden; } }
 
@@ -87,8 +87,8 @@ h1, h2, h3 { font-family: var(--display); font-weight: 700; text-wrap: balance; 
 .top-row { display: flex; align-items: center; gap: 12px; min-height: 64px; }
 
 .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 700; letter-spacing: -0.01em; margin-right: auto; }
-.mark { display: block; width: 44px; height: 44px; flex: none; }
-.brand-name { display: block; height: 40px; width: auto; aspect-ratio: 211.86 / 54; }
+.mark { display: none; width: 40px; height: 40px; flex: none; }
+.brand-name { display: block; height: 44px; width: auto; aspect-ratio: 172.83 / 77.3; }
 
 nav { display: flex; gap: 2px; }
 nav a {
@@ -217,6 +217,7 @@ h2::after { content: ""; display: block; width: 44px; height: 3px; margin-top: 1
   .wrap { padding: 0 16px; }
   .top-row { gap: 6px; min-height: 58px; }
   .brand-name, .nav-github span { display: none; }
+  .mark { display: block; }
   .nav-github { width: 40px; padding: 0; justify-content: center; }
   nav a { padding: 0 10px; }
   .hero-inner { padding-top: 52px; padding-bottom: 52px; }
