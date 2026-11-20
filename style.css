@@ -87,15 +87,14 @@ h1, h2, h3 { font-family: var(--display); font-weight: 700; text-wrap: balance; 
 .top-row { display: flex; align-items: center; gap: 12px; min-height: 64px; }
 
 .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 700; letter-spacing: -0.01em; margin-right: auto; }
-.mark { display: none; width: 40px; height: 40px; flex: none; }
 .brand-name { display: block; height: 44px; width: auto; aspect-ratio: 172.83 / 77.3; }
 
-nav { display: flex; gap: 2px; }
-nav a {
+.nav-desktop { display: flex; gap: 2px; }
+.nav-desktop a {
   display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px;
   color: var(--muted); text-decoration: none; font-size: 15px; font-weight: 500; border-radius: 999px;
 }
-nav a:hover { color: var(--text); background: var(--tint); }
+.nav-desktop a:hover { color: var(--text); background: var(--tint); }
 
 .nav-github {
   display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px;
@@ -103,6 +102,28 @@ nav a:hover { color: var(--text); background: var(--tint); }
   color: var(--text); text-decoration: none; font-size: 15px; font-weight: 600;
 }
 .nav-github:hover { border-color: var(--accent); }
+
+/* Phone menu (hidden on wide screens) */
+.menu { display: none; position: relative; }
+.menu summary {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px 0 12px; cursor: pointer;
+  list-style: none; border: 1px solid var(--line); border-radius: 999px; background: var(--surface);
+  color: var(--text); font-size: 15px; font-weight: 600; user-select: none;
+}
+.menu summary::-webkit-details-marker { display: none; }
+.menu summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.menu[open] summary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.menu nav {
+  position: absolute; right: 0; top: calc(100% + 10px); z-index: 20; width: min(270px, calc(100vw - 32px));
+  display: grid; padding: 8px; background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
+  box-shadow: 0 12px 32px rgb(20 27 45 / 16%);
+}
+.menu nav a {
+  display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 14px; border-radius: 12px;
+  color: var(--text); text-decoration: none; font-size: 17px; font-weight: 500;
+}
+.menu nav a:hover, .menu nav a:focus-visible { background: var(--tint); }
+.menu nav .menu-github { margin-top: 6px; border-top: 1px solid var(--line); border-radius: 0 0 12px 12px; padding-top: 6px; min-height: 54px; font-weight: 600; }
 
 /* ---------- Hero ---------- */
 .hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
@@ -216,10 +237,9 @@ h2::after { content: ""; display: block; width: 44px; height: 3px; margin-top: 1
 @media (max-width: 760px) {
   .wrap { padding: 0 16px; }
   .top-row { gap: 6px; min-height: 58px; }
-  .brand-name, .nav-github span { display: none; }
-  .mark { display: block; }
-  .nav-github { width: 40px; padding: 0; justify-content: center; }
-  nav a { padding: 0 10px; }
+  .nav-desktop, .nav-github { display: none; }
+  .menu { display: block; }
+  .brand-name { height: 40px; }
   .hero-inner { padding-top: 52px; padding-bottom: 52px; }
   .motif { width: 100%; opacity: 0.1; -webkit-mask-image: linear-gradient(to bottom left, #000, transparent 70%); mask-image: linear-gradient(to bottom left, #000, transparent 70%); }
   .section { padding: 52px 0; scroll-margin-top: 58px; }
@@ -234,10 +254,6 @@ h2::after { content: ""; display: block; width: 44px; height: 3px; margin-top: 1
   #contact { padding-top: 0; }
   .contact { padding: 32px 22px; border-radius: 20px; }
   .contact .btn { font-size: 15px; padding: 0 18px; }
-}
-
-@media (max-width: 380px) {
-  nav a { padding: 0 7px; font-size: 14px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
