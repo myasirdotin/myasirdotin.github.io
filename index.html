@@ -9,8 +9,12 @@
   <meta property="og:description" content="Learning apps for children, learning sites for students and teachers, and the web for a small business. Srinagar, Kashmir.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://myasirdotin.github.io/">
-  <meta name="theme-color" content="#0f766e">
+  <meta name="theme-color" content="#0f5f58" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e1413" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta property="og:image" content="https://myasirdotin.github.io/icon-512.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,124 +22,229 @@
 
   <header class="top">
     <div class="wrap top-row">
-      <a class="brand" href="#">Yasir Rasool</a>
+      <a class="brand" href="#top" aria-label="Yasir Rasool, top of page">
+        <img class="mark" src="favicon.svg" width="36" height="36" alt="">
+        <span class="brand-name">Yasir Rasool</span>
+      </a>
       <nav aria-label="Sections">
         <a href="#about">About</a>
-        <a href="#projects">Projects</a>
+        <a href="#work">Work</a>
+        <a href="#principles">Principles</a>
         <a href="#contact">Contact</a>
       </nav>
+      <a class="nav-github" href="https://github.com/myasirdotin">
+        <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        <span>GitHub</span>
+      </a>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero wrap">
-      <p class="eyebrow">Educator &amp; app builder · Srinagar, Kashmir</p>
-      <h1>I build learning apps for children and students.</h1>
-      <p class="lead">
-        I teach, and I make the tools I want my learners to have: an offline learning app for young
-        children, learning websites for school and commerce students, and the online shop for my own business.
-      </p>
-      <div class="actions">
-        <a class="btn primary" href="#projects">See my work</a>
-        <a class="btn" href="mailto:info@thekhadeejah.com">Email me</a>
-        <a class="btn" href="https://github.com/myasirdotin">GitHub</a>
-      </div>
-    </section>
 
-    <section id="about" class="wrap section">
-      <h2>About me</h2>
-      <div class="about">
-        <div class="about-text">
-          <p>
-            I'm Yasir Rasool, from Srinagar in Jammu and Kashmir. My work sits where teaching and software meet.
-            I care about learning that is clear, kind and honest, and about apps that respect the people who use them:
-            no ads, no tracking, nothing a careful parent would worry about.
-          </p>
-          <p>
-            I also run The Khadeejah, a Kashmiri modest-wear and tailoring business, so I build for real
-            day-to-day work as well as for the classroom.
-          </p>
+    <section class="hero" id="top">
+      <svg class="motif" aria-hidden="true" focusable="false">
+        <defs>
+          <pattern id="stars" width="96" height="96" patternUnits="userSpaceOnUse">
+            <g fill="none" stroke="currentColor" stroke-width="1.2">
+              <rect x="28" y="28" width="40" height="40"/>
+              <rect x="28" y="28" width="40" height="40" transform="rotate(45 48 48)"/>
+              <path d="M48 0v19.7M48 76.3V96M0 48h19.7M76.3 48H96"/>
+              <path d="M0 0l28 28M96 0L68 28M0 96l28-28M96 96L68 68"/>
+            </g>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#stars)"/>
+      </svg>
+      <div class="wrap hero-inner">
+        <p class="eyebrow">Educator &amp; app builder · Srinagar, Kashmir</p>
+        <h1>I build learning apps for children and students.</h1>
+        <p class="lead">
+          I teach, and I make the tools I want my learners to have: an offline learning app for young
+          children, learning websites for school and commerce students, and the online shop for my own business.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="#work">See my work</a>
+          <a class="btn" href="mailto:info@thekhadeejah.com">Email me</a>
         </div>
-        <ul class="does" aria-label="What I do">
-          <li><strong>Learning apps for children</strong><span>Offline, spoken, built on Islamic values.</span></li>
-          <li><strong>Learning sites for students and teachers</strong><span>Coding, commerce, accounts and tax.</span></li>
-          <li><strong>The web for a small business</strong><span>A Laravel shop, run day to day.</span></li>
-        </ul>
       </div>
     </section>
 
-    <section id="projects" class="wrap section">
-      <h2>Projects</h2>
-      <div class="cards">
-
-        <article class="card">
-          <p class="kind">Android app</p>
-          <h3>Learn with Khadeejah</h3>
-          <p>
-            A gentle learning app for Muslim children from Pre-Nursery up to Class 5: short, spoken activities in
-            Maths, English, Science, Thinking, Art and Cursive writing, built on Islamic values. It works offline,
-            with no ads, no accounts and nothing sent anywhere.
-          </p>
-          <p class="status">Coming soon to Google Play</p>
-          <ul class="tags"><li>React Native</li><li>Expo</li><li>TypeScript</li><li>SQLite</li></ul>
-          <div class="links"><a href="https://thekhadeejah.com/learn">About the app →</a></div>
-        </article>
-
-        <article class="card">
-          <p class="kind">Website · online shop</p>
-          <h3>The Khadeejah</h3>
-          <p>
-            The online home of my business: Kashmiri modest wear and custom tailoring, handcrafted by master artisans
-            in Srinagar. A shop I built and run myself.
-          </p>
-          <ul class="tags"><li>Laravel</li><li>PHP</li><li>MySQL</li></ul>
-          <div class="links"><a href="https://thekhadeejah.com">thekhadeejah.com →</a></div>
-        </article>
-
-        <article class="card">
-          <p class="kind">Learning website</p>
-          <h3>Commerce Lab</h3>
-          <p>
-            A mobile-first site for learning accounts, business, Indian tax and GST, Excel and MIS reporting, with
-            lessons, hands-on labs and calculators. For students from Class 8 to college, their teachers, and people
-            starting a small business.
-          </p>
-          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>PWA</li></ul>
-          <div class="links">
-            <a href="https://commerce-lab-seven.vercel.app">Open the site →</a>
-            <a href="https://github.com/myasirdotin/commerce-lab">Source</a>
+    <section id="about" class="section">
+      <div class="wrap">
+        <h2>About me</h2>
+        <div class="about">
+          <div class="about-text">
+            <p>
+              I'm Yasir Rasool, from Srinagar in Jammu and Kashmir. My work sits where teaching and software meet.
+              I care about learning that is clear, kind and honest, and about apps that respect the people who use them:
+              no ads, no tracking, nothing a careful parent would worry about.
+            </p>
+            <p>
+              I also run The Khadeejah, a Kashmiri modest-wear and tailoring business, so I build for real
+              day-to-day work as well as for the classroom.
+            </p>
           </div>
-        </article>
-
-        <article class="card">
-          <p class="kind">Learning website</p>
-          <h3>Junior Coders</h3>
-          <p>
-            A school computer-science platform for Grades 6 to 10: web development, Python and AI literacy, with
-            textbooks and code studios that run in the browser, no setup needed.
-          </p>
-          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-          <div class="links">
-            <a href="https://beicoders.vercel.app">Open the site →</a>
-            <a href="https://github.com/myasirdotin/junior-coders-git-lab">Source</a>
-          </div>
-        </article>
-
+          <ul class="does" aria-label="What I do">
+            <li><strong>Learning apps for children</strong><span>Offline, spoken, built on Islamic values.</span></li>
+            <li><strong>Learning sites for students and teachers</strong><span>Coding, commerce, accounts and tax.</span></li>
+            <li><strong>The web for a small business</strong><span>A Laravel shop, run day to day.</span></li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <section id="contact" class="wrap section contact">
-      <h2>Get in touch</h2>
-      <p>For a project, a school, or a question about one of my apps, email me. I read every message.</p>
-      <div class="actions">
-        <a class="btn primary" href="mailto:info@thekhadeejah.com">info@thekhadeejah.com</a>
-        <a class="btn" href="https://github.com/myasirdotin">github.com/myasirdotin</a>
+    <section id="work" class="section tinted">
+      <div class="wrap">
+        <h2>Work</h2>
+        <p class="section-lead">Five things I have built and look after. Each link opens a public page.</p>
+        <div class="cards">
+
+          <article class="card feature t-rose">
+            <div class="card-head">
+              <span class="tile" aria-hidden="true">LK</span>
+              <div>
+                <p class="kind">Android app</p>
+                <h3>Learn with Khadeejah</h3>
+              </div>
+            </div>
+            <div class="card-body">
+              <p>
+                A gentle learning app for Muslim children from Pre-Nursery up to Class 5: short, spoken activities in
+                Maths, English, Science, Thinking, Art and Cursive writing, built on Islamic values. It works offline,
+                with no ads, no accounts and nothing sent anywhere.
+              </p>
+              <p class="status">Coming soon to Google Play</p>
+              <ul class="tags"><li>React Native</li><li>Expo</li><li>TypeScript</li><li>SQLite</li></ul>
+              <div class="links"><a href="https://thekhadeejah.com/learn">About the app <span aria-hidden="true">→</span></a></div>
+            </div>
+          </article>
+
+          <article class="card t-gold">
+            <div class="card-head">
+              <span class="tile" aria-hidden="true">TK</span>
+              <div>
+                <p class="kind">Website · online shop</p>
+                <h3>The Khadeejah</h3>
+              </div>
+            </div>
+            <p>
+              The online home of my business: Kashmiri modest wear and custom tailoring, handcrafted by master artisans
+              in Srinagar. A shop I built and run myself.
+            </p>
+            <ul class="tags"><li>Laravel</li><li>PHP</li><li>MySQL</li></ul>
+            <div class="links"><a href="https://thekhadeejah.com">thekhadeejah.com <span aria-hidden="true">→</span></a></div>
+          </article>
+
+          <article class="card t-teal">
+            <div class="card-head">
+              <span class="tile" aria-hidden="true">CL</span>
+              <div>
+                <p class="kind">Learning website</p>
+                <h3>Commerce Lab</h3>
+              </div>
+            </div>
+            <p>
+              A mobile-first site for learning accounts, business, Indian tax and GST, Excel and MIS reporting, with
+              lessons, hands-on labs and calculators. For students from Class 8 to college, their teachers, and people
+              starting a small business.
+            </p>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>PWA</li></ul>
+            <div class="links">
+              <a href="https://commerce-lab-seven.vercel.app">Open the site <span aria-hidden="true">→</span></a>
+              <a href="https://github.com/myasirdotin/commerce-lab">Source</a>
+            </div>
+          </article>
+
+          <article class="card t-blue">
+            <div class="card-head">
+              <span class="tile" aria-hidden="true">JC</span>
+              <div>
+                <p class="kind">Learning website</p>
+                <h3>Junior Coders</h3>
+              </div>
+            </div>
+            <p>
+              A school computer-science platform for Grades 6 to 10: twelve textbooks from HTML to Python, networks
+              and Android, with lessons, cheat sheets and code studios that run in the browser, no setup needed.
+            </p>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+            <div class="links">
+              <a href="https://beicoders.vercel.app">Open the site <span aria-hidden="true">→</span></a>
+              <a href="https://github.com/myasirdotin/junior-coders-git-lab">Source</a>
+            </div>
+          </article>
+
+          <article class="card t-green">
+            <div class="card-head">
+              <span class="tile" aria-hidden="true">PF</span>
+              <div>
+                <p class="kind">Practice files · GitHub template</p>
+                <h3>Junior Coders practice files</h3>
+              </div>
+            </div>
+            <p>
+              The HTML, CSS and JavaScript exercises of Junior Coders as starter files a student can copy, type
+              answers into and open in a browser. One numbered folder for each task.
+            </p>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+            <div class="links">
+              <a href="https://github.com/myasirdotin/junior-coders-exercises">Open on GitHub <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="principles" class="section">
+      <div class="wrap">
+        <h2>How I build</h2>
+        <p class="section-lead">Four rules I hold every project to.</p>
+        <ol class="rules">
+          <li>
+            <h3>Works without the internet</h3>
+            <p>A child or a classroom should not need a good connection to learn. Lessons load once and keep working.</p>
+          </li>
+          <li>
+            <h3>No ads, no tracking</h3>
+            <p>What a learner does stays on their own device. Nothing is collected that the work does not need.</p>
+          </li>
+          <li>
+            <h3>Clear and kind</h3>
+            <p>Plain words, small steps, and a respectful tone. Nothing a careful parent or teacher would worry about.</p>
+          </li>
+          <li>
+            <h3>Honest about what it does</h3>
+            <p>No tricks to keep people tapping, and no claims a page cannot keep.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="wrap">
+        <div class="contact">
+          <h2>Get in touch</h2>
+          <p>For a project, a school, or a question about one of my apps, email me. I read every message.</p>
+          <div class="actions">
+            <a class="btn on-accent" href="mailto:info@thekhadeejah.com">info@thekhadeejah.com</a>
+            <a class="btn ghost-on-accent" href="https://github.com/myasirdotin">github.com/myasirdotin</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="wrap foot">
-    <p>© 2026 Yasir Rasool · Srinagar, Kashmir</p>
+  <footer class="foot">
+    <div class="wrap foot-row">
+      <p>© 2026 Yasir Rasool · Srinagar, Kashmir</p>
+      <p class="foot-links">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#principles">Principles</a>
+        <a href="#top">Back to top</a>
+      </p>
+    </div>
   </footer>
 </body>
 </html>
