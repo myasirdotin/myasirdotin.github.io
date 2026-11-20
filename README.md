@@ -7,8 +7,8 @@ Yasir Rasool's personal site. Not a portfolio: a hobby notebook of the things I 
 - **Logo:** `logo/` holds the owner's "Explore with Yasir" logo: `explore-with-yasir-logo.png` (cropped, transparent, full size),
   `explore-with-yasir-logo-on-white.jpg` (the original square on white) and `logo-intro.webp` (960 px, for the intro).
 - **Logo intro:** animated in CSS only (birds fly off, a gold light sweeps across, two sparkles), lasts about 2.5 s,
-  plays once per visit (`sessionStorage`), is skipped when the visitor asks for reduced motion, and sits on a
-  paper-coloured card in dark mode. The logo image itself is never changed by the animation.
+  plays once per visit (`sessionStorage`), is skipped when the visitor asks for reduced motion, and always shows on plain white (like the logo's own
+  background), in dark mode too. The logo image itself is never changed by the animation.
 - **On this PC:** start Apache in XAMPP and open `http://localhost/myasirdotin.github.io/`.
 - **Live:** `https://myasirdotin.github.io` once this folder is pushed to the GitHub repository
   `myasirdotin/myasirdotin.github.io` (GitHub Pages, branch `main`, root folder).
