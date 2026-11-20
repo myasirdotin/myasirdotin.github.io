@@ -72,12 +72,25 @@ a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-ra
 
 h1, h2, h3 { font-family: var(--display); font-weight: 700; text-wrap: balance; }
 
+/* ---------- Opening screen: the wordmark shows for a moment, then the page (CSS only) ---------- */
+.intro {
+  position: fixed; inset: 0; z-index: 50; display: grid; place-content: center; justify-items: center; gap: 18px;
+  background: var(--bg); color: var(--text); pointer-events: none;
+  animation: intro-out .45s ease 1.2s forwards;
+}
+.intro svg { width: min(62vw, 300px); height: auto; animation: intro-in .7s cubic-bezier(.2, .7, .2, 1) both; }
+.intro-line { width: min(40vw, 180px); height: 2px; border-radius: 2px; background: var(--gold); transform-origin: left; animation: intro-line .9s ease .2s both; }
+@keyframes intro-in { from { opacity: 0; transform: translateY(12px) scale(.96); } }
+@keyframes intro-line { from { transform: scaleX(0); } }
+@keyframes intro-out { to { opacity: 0; visibility: hidden; } }
+
 /* ---------- Header ---------- */
 .top { position: sticky; top: 0; z-index: 10; background: var(--bg); border-bottom: 1px solid var(--line); }
 .top-row { display: flex; align-items: center; gap: 12px; min-height: 64px; }
 
 .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 700; letter-spacing: -0.01em; margin-right: auto; }
-.mark { display: block; width: 36px; height: 36px; flex: none; }
+.mark { display: none; width: 36px; height: 36px; flex: none; }
+.brand-name { display: block; height: 40px; width: auto; aspect-ratio: 112.81 / 60; }
 
 nav { display: flex; gap: 2px; }
 nav a {
@@ -206,6 +219,7 @@ h2::after { content: ""; display: block; width: 44px; height: 3px; margin-top: 1
   .wrap { padding: 0 16px; }
   .top-row { gap: 6px; min-height: 58px; }
   .brand-name, .nav-github span { display: none; }
+  .mark { display: block; }
   .nav-github { width: 40px; padding: 0; justify-content: center; }
   nav a { padding: 0 10px; }
   .hero-inner { padding-top: 52px; padding-bottom: 52px; }
@@ -229,13 +243,14 @@ h2::after { content: ""; display: block; width: 44px; height: 3px; margin-top: 1
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .intro { display: none; }
   html { scroll-behavior: auto; }
   .card, .btn { transition: none; }
   .card:hover { transform: none; }
 }
 
 @media print {
-  .top, .motif, .foot-links { display: none; }
+  .top, .motif, .foot-links, .intro { display: none; }
   .section { padding: 24px 0; }
   .card { break-inside: avoid; box-shadow: none; }
 }
